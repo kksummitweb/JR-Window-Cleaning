@@ -922,8 +922,20 @@ p {
     letter-spacing: 0.2em;
   }
 
+  .brand {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 68px;
+    height: 44px;
+  }
+
   .brand span {
-    display: none;
+    display: block;
+    font-size: 0.82rem;
+    white-space: nowrap;
   }
 
   .navbar {
