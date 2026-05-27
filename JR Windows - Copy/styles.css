@@ -901,6 +901,13 @@ p {
     font-size: 15px;
   }
 
+  .nav-toggle {
+    color: var(--white);
+    border: 1px solid rgba(0, 168, 255, 0.42);
+    background: linear-gradient(135deg, #0a2238, #007dcc);
+    box-shadow: 0 12px 30px rgba(0, 168, 255, 0.22);
+  }
+
   .container {
     width: min(100% - 28px, 1140px);
   }
