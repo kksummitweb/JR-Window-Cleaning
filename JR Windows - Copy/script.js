@@ -2,8 +2,7 @@ const services = [
   ["Interior Window Cleaning", "Careful indoor cleaning around furniture, floors, blinds, and decor for a brighter home interior.", "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"],
   ["Exterior Window Cleaning", "Outside glass, edges, and frames cleaned with detail-focused care for a crystal clear finish.", "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80"],
   ["Screen Cleaning", "Dust, pollen, and debris removed from screens so the full window area feels refreshed.", "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=900&q=80"],
-  ["Bi-Annual Service Plan", "Two scheduled cleanings per year to keep your windows looking sharp through seasonal changes.", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"],
-  ["Tri-Annual Service Plan", "Three cleanings per year for homeowners who want a more consistent, polished look year-round.", "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"]
+  ["Bi/Tri Annual Service Plan", "Choose two or three scheduled cleanings per year to keep your windows consistently bright and polished.", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"]
 ];
 
 const reviews = [
