@@ -126,14 +126,63 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   setInterval(() => show(index + 1), 7000);
 });
 
-document.querySelectorAll("form").forEach((form) => {
-  form.addEventListener("submit", (event) => {
+const quoteForm = document.querySelector("[data-quote-form]");
+
+if (quoteForm) {
+  quoteForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const status = form.querySelector(".form-status");
-    if (status) status.textContent = "Thanks! This demo form is ready. Connect it to email/Formspree/Netlify Forms to receive submissions.";
-    form.reset();
+
+    const status = quoteForm.querySelector(".form-status");
+    const submitButton = quoteForm.querySelector('button[type="submit"]');
+    const webAppUrl = (quoteForm.dataset.appsScriptUrl || "").trim();
+
+    if (!webAppUrl || webAppUrl === "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") {
+      if (status) status.textContent = "Set your Google Apps Script web app URL in free-quote.html to enable submissions.";
+      return;
+    }
+
+    if (status) status.textContent = "Sending your request...";
+    if (submitButton) submitButton.disabled = true;
+
+    const formData = new FormData(quoteForm);
+    const params = new URLSearchParams();
+
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const address = String(formData.get("address") || "").trim();
+    const service = String(formData.get("service") || "").trim();
+    const details = String(formData.get("details") || "").trim();
+
+    params.set("name", name);
+    params.set("email", email);
+    params.set("phone", phone);
+    params.set("address", address);
+    params.set("business", service);
+    params.set("service", service);
+    params.set("details", details);
+    params.set("message", details);
+    params.set("sourcePage", window.location.href);
+    params.set("submittedAt", new Date().toISOString());
+
+    try {
+      // no-cors avoids browser blocks for Apps Script endpoints while still sending the request.
+      await fetch(webAppUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: params
+      });
+
+      if (status) status.textContent = "Thanks! Your quote request was sent. JR Window Cleaning will follow up soon.";
+      quoteForm.reset();
+    } catch (error) {
+      if (status) status.textContent = "Could not send your request right now. Please call or email directly.";
+      console.error("Quote form submission error:", error);
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
   });
-});
+}
 
 window.addEventListener("mousemove", (event) => {
   document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);

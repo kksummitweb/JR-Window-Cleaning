@@ -40,12 +40,13 @@
           </div>
         </aside>
 
-        <form class="form-card form-grid reveal">
-          <label>Name <input required type="text" placeholder="Your name"></label>
-          <label>Email <input required type="email" placeholder="you@example.com"></label>
-          <label>Phone <input type="tel" placeholder="Best phone number"></label>
+        <form class="form-card form-grid reveal" data-quote-form data-apps-script-url="https://script.google.com/macros/s/AKfycbz3i-tV3BzmflVzeJMPfdxe38tscGVCpqAxoyXCqFhvuP3BPKVzjnbXSXKru_j40LJF_w/exec">
+          <label>Name <input required type="text" name="name" autocomplete="name" placeholder="Your name"></label>
+          <label>Email <input required type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
+          <label>Phone <input type="tel" name="phone" autocomplete="tel" placeholder="Best phone number"></label>
+          <label>Address <input type="text" name="address" autocomplete="street-address" placeholder="Street address"></label>
           <label>Service
-            <select required>
+            <select required name="service">
               <option value="">Choose service</option>
               <option>Interior Window Cleaning</option>
               <option>Exterior Window Cleaning</option>
@@ -54,9 +55,9 @@
               <option>Tri-Annual Service Plan</option>
             </select>
           </label>
-          <label>Project Details / Message <textarea required rows="6" placeholder="Approximate windows, property type, timing, add-ons, questions, or anything else JR should know."></textarea></label>
+          <label>Project Details / Message <textarea required rows="6" name="details" placeholder="Approximate windows, property type, timing, add-ons, questions, or anything else JR should know."></textarea></label>
           <button class="btn blue" type="submit">Submit Quote Request</button>
-          <p class="form-status"></p>
+          <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
     </section>
