@@ -1,10 +1,10 @@
 document.documentElement.classList.add("js");
 
 const services = [
-  ["Interior Window Cleaning", "Careful indoor cleaning around furniture, floors, blinds, and decor for a brighter home interior.", "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"],
-  ["Exterior Window Cleaning", "Outside glass, edges, and frames cleaned with detail-focused care for a crystal clear finish.", "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80"],
-  ["Screen Cleaning", "Dust, pollen, and debris removed from screens so the full window area feels refreshed.", "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=900&q=80"],
-  ["Bi/Tri Annual Service Plan", "Choose two or three scheduled cleanings per year to keep your windows consistently bright and polished.", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"]
+  ["Interior Window Cleaning", "Careful indoor cleaning around furniture, floors, blinds, and decor for a brighter home interior.", "public/gallery image 1.jpeg"],
+  ["Exterior Window Cleaning", "Outside glass, edges, and frames cleaned with detail-focused care for a crystal clear finish.", "public/gallery image 2.jpeg"],
+  ["Screen Cleaning", "Dust, pollen, and debris removed from screens so the full window area feels refreshed.", "public/gallery image 3.jpeg"],
+  ["Bi/Tri Annual Service Plan", "Choose two or three scheduled cleanings per year to keep your windows consistently bright and polished.", "public/gallery image 4.jpeg"]
 ];
 
 const reviews = [
