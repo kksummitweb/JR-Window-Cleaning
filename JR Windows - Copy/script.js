@@ -14,12 +14,12 @@ const reviews = [
 ];
 
 const gallery = [
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=900&q=80"
+  "public/After.jpeg",
+  "public/gallery image 1.jpeg",
+  "public/gallery image 2.jpeg",
+  "public/gallery image 3.jpeg",
+  "public/gallery image 4.jpeg",
+  "public/gallery image 5.jpeg"
 ];
 
 const header = document.querySelector(".navbar");
