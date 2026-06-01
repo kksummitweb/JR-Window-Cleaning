@@ -64,7 +64,7 @@ document.querySelectorAll("[data-reviews]").forEach((grid) => {
 document.querySelectorAll("[data-gallery]").forEach((grid) => {
   grid.innerHTML = gallery.map((image, index) => `
     <article class="gallery-item ${index % 3 === 0 ? "tall" : ""} reveal">
-      <img src="${image}" alt="JR Window Cleaning gallery image ${index + 1}" loading="lazy">
+      <img src="${image}" alt="J.R Window Cleaning gallery image ${index + 1}" loading="lazy">
     </article>
   `).join("");
 });
@@ -176,7 +176,7 @@ if (quoteForm) {
         body: params
       });
 
-      if (status) status.textContent = "Thanks! Your quote request was sent. JR Window Cleaning will follow up soon.";
+      if (status) status.textContent = "Thanks! Your quote request was sent. J.R Window Cleaning will follow up soon.";
       quoteForm.reset();
     } catch (error) {
       if (status) status.textContent = "Could not send your request right now. Please call or email directly.";

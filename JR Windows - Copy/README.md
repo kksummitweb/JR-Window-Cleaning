@@ -1,6 +1,6 @@
-# JR Window Cleaning
+# J.R Window Cleaning
 
-Premium multi-page static HTML website for JR Window Cleaning.
+Premium multi-page static HTML website for J.R Window Cleaning.
 
 ## Pages
 
