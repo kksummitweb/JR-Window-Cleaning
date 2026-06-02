@@ -732,6 +732,27 @@ p {
   gap: 16px;
 }
 
+.required-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.required-star {
+  color: #d7263d;
+}
+
+.required-note.is-complete {
+  display: none;
+}
+
+.form-grid label.is-complete .required-star {
+  display: none;
+}
+
 .form-grid label {
   display: grid;
   gap: 8px;
@@ -761,6 +782,26 @@ p {
 .form-grid textarea:focus {
   border-color: var(--blue);
   box-shadow: 0 0 0 5px rgba(0, 168, 255, 0.13);
+}
+
+.form-grid .consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.form-grid .consent-check input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .form-status {

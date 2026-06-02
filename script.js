@@ -132,6 +132,33 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 const quoteForm = document.querySelector("[data-quote-form]");
 
 if (quoteForm) {
+  const requiredFields = [...quoteForm.querySelectorAll("input[required], select[required], textarea[required]")];
+  const requiredNote = quoteForm.querySelector(".required-note");
+
+  const isComplete = (field) => {
+    if (field.type === "checkbox" || field.type === "radio") return field.checked;
+    return String(field.value || "").trim().length > 0;
+  };
+
+  const updateRequiredIndicators = () => {
+    requiredFields.forEach((field) => {
+      const label = field.closest("label");
+      if (!label) return;
+      label.classList.toggle("is-complete", isComplete(field));
+    });
+
+    if (requiredNote) {
+      requiredNote.classList.toggle("is-complete", requiredFields.length > 0 && requiredFields.every(isComplete));
+    }
+  };
+
+  requiredFields.forEach((field) => {
+    const eventName = field.type === "checkbox" || field.tagName === "SELECT" ? "change" : "input";
+    field.addEventListener(eventName, updateRequiredIndicators);
+  });
+
+  updateRequiredIndicators();
+
   quoteForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -178,6 +205,7 @@ if (quoteForm) {
 
       if (status) status.textContent = "Thanks! Your quote request was sent. J.R Window Cleaning will follow up soon.";
       quoteForm.reset();
+      updateRequiredIndicators();
     } catch (error) {
       if (status) status.textContent = "Could not send your request right now. Please call or email directly.";
       console.error("Quote form submission error:", error);
