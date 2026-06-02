@@ -743,6 +743,8 @@ p {
 
 .required-star {
   color: #d7263d;
+  letter-spacing: 0;
+  margin-left: 0;
 }
 
 .required-note.is-complete {
@@ -759,6 +761,11 @@ p {
   color: rgba(5, 7, 11, 0.62);
   font-size: 0.78rem;
   font-weight: 950;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.form-grid .label-copy {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
