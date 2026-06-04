@@ -1,5 +1,12 @@
 document.documentElement.classList.add("js");
 
+const host = window.location.hostname;
+const isLocalHost = host === "localhost" || host === "127.0.0.1" || host === "0.0.0.0";
+
+if (window.location.protocol === "http:" && !isLocalHost) {
+  window.location.replace(`https://${window.location.host}${window.location.pathname}${window.location.search}${window.location.hash}`);
+}
+
 const services = [
   ["Interior Window Cleaning", "Careful indoor cleaning around furniture, floors, blinds, and decor for a brighter home interior.", "public/gallery-image-1.jpeg"],
   ["Exterior Window Cleaning", "Outside glass, edges, and frames cleaned with detail-focused care for a crystal clear finish.", "public/gallery-image-2.jpeg"],
