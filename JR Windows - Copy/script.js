@@ -19,7 +19,13 @@ const gallery = [
   "public/gallery image 2.jpeg",
   "public/gallery image 3.jpeg",
   "public/gallery image 4.jpeg",
-  "public/gallery image 5.jpeg"
+  "public/gallery image 5.jpeg",
+  "public/IMG_0586.jpeg",
+  "public/IMG_0587.jpeg",
+  "public/IMG_0588.jpeg",
+  "public/IMG_1529.jpeg",
+  "public/IMG_1533.jpeg",
+  "public/IMG_1535.jpeg"
 ];
 
 const header = document.querySelector(".navbar");
