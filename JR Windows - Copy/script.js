@@ -142,6 +142,7 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 });
 
 const quoteForm = document.querySelector("[data-quote-form]");
+const DEFAULT_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYQaS4brLItkqeM0qn5j41YWwTUbZFyEYjy8d2RSymo3mbTskUcjuKj63QLzjpqT79fQ/exec";
 
 if (quoteForm) {
   const requiredFields = [...quoteForm.querySelectorAll("input[required], select[required], textarea[required]")];
@@ -176,7 +177,7 @@ if (quoteForm) {
 
     const status = quoteForm.querySelector(".form-status");
     const submitButton = quoteForm.querySelector('button[type="submit"]');
-    const webAppUrl = (quoteForm.dataset.appsScriptUrl || "").trim();
+    const webAppUrl = (quoteForm.dataset.appsScriptUrl || DEFAULT_APPS_SCRIPT_URL).trim();
 
     if (!webAppUrl || webAppUrl === "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") {
       if (status) status.textContent = "Set your Google Apps Script web app URL in free-quote.html to enable submissions.";
@@ -195,6 +196,11 @@ if (quoteForm) {
     const address = String(formData.get("address") || "").trim();
     const service = String(formData.get("service") || "").trim();
     const details = String(formData.get("details") || "").trim();
+    const consentChecked = quoteForm.querySelector('input[name="contactConsent"]')?.checked === true;
+    const consentStatus = consentChecked ? "checked" : "not checked";
+    const detailsWithConsent = details
+      ? `${details}\n\nContact consent checkbox: ${consentStatus}`
+      : `Contact consent checkbox: ${consentStatus}`;
 
     params.set("name", name);
     params.set("email", email);
@@ -202,8 +208,9 @@ if (quoteForm) {
     params.set("address", address);
     params.set("business", service);
     params.set("service", service);
-    params.set("details", details);
-    params.set("message", details);
+    params.set("details", detailsWithConsent);
+    params.set("message", detailsWithConsent);
+    params.set("contactConsent", consentStatus);
     params.set("sourcePage", window.location.href);
     params.set("submittedAt", new Date().toISOString());
 
